@@ -804,6 +804,334 @@
         ]
     },
     {
+        "id": "inject_alertas",
+        "type": "inject",
+        "z": "36527cff96e45198",
+        "name": "Actualizar Alertas",
+        "props": [],
+        "repeat": "",
+        "crontab": "",
+        "once": true,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 110,
+        "y": 1460,
+        "wires": [
+            [
+                "698a16c97fba63a0",
+                "69628dc538714f5a"
+            ]
+        ]
+    },
+    {
+        "id": "sqlite_tipo_alerta",
+        "type": "sqlite",
+        "z": "36527cff96e45198",
+        "mydb": "db3fae6ebe4c50e5",
+        "sqlquery": "msg.topic",
+        "sql": "",
+        "name": "Contar Tipos Alerta",
+        "x": 550,
+        "y": 1520,
+        "wires": [
+            [
+                "function_tipo_alerta"
+            ]
+        ]
+    },
+    {
+        "id": "function_tipo_alerta",
+        "type": "function",
+        "z": "36527cff96e45198",
+        "name": "Formatear Tipo Alerta",
+        "func": "\nlet labels = [];\nlet values = [];\n\nmsg.payload.forEach(row => {\n    labels.push(row.tipo);\n    values.push(row.cantidad);\n});\n\nmsg.payload = [\n    {\n        series: [\"Tipo de Alerta\"],\n        data: [values],\n        labels: labels\n    }\n];\n\nreturn msg;\n",
+        "outputs": 1,
+        "x": 820,
+        "y": 1480,
+        "wires": [
+            [
+                "ui_chart_tipo_alerta"
+            ]
+        ]
+    },
+    {
+        "id": "ui_chart_tipo_alerta",
+        "type": "ui_chart",
+        "z": "36527cff96e45198",
+        "name": "Frecuencia por Tipo",
+        "group": "c5d6eed71813cb94",
+        "order": 1,
+        "width": 7,
+        "height": 4,
+        "label": "Frecuencia por Tipo de Alerta",
+        "chartType": "bar",
+        "legend": "false",
+        "xformat": "auto",
+        "interpolate": "linear",
+        "nodata": "Esperando datos...",
+        "dot": false,
+        "ymin": "",
+        "ymax": "",
+        "removeOlder": 1,
+        "removeOlderPoints": "",
+        "removeOlderUnit": "3600",
+        "cutout": 0,
+        "useOneColor": false,
+        "useUTC": false,
+        "colors": [
+            "#cc0000",
+            "#ff3333",
+            "#ff6666",
+            "#000000",
+            "#000000",
+            "#000000",
+            "#000000",
+            "#000000",
+            "#000000"
+        ],
+        "outputs": 1,
+        "useDifferentColor": false,
+        "className": "",
+        "x": 1080,
+        "y": 1440,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "sqlite_severidad_alerta",
+        "type": "sqlite",
+        "z": "36527cff96e45198",
+        "mydb": "db3fae6ebe4c50e5",
+        "sqlquery": "msg.topic",
+        "sql": "",
+        "name": "Contar Severidad Alerta",
+        "x": 550,
+        "y": 1600,
+        "wires": [
+            [
+                "function_severidad_alerta"
+            ]
+        ]
+    },
+    {
+        "id": "function_severidad_alerta",
+        "type": "function",
+        "z": "36527cff96e45198",
+        "name": "Formatear Severidad Alerta",
+        "func": "\nlet labels = [];\nlet values = [];\n\nmsg.payload.forEach(row => {\n    labels.push(row.severidad);\n    values.push(row.cantidad);\n});\n\nmsg.payload = [\n    {\n        series: [\"Severidad de Alerta\"],\n        data: [values],\n        labels: labels\n    }\n];\n\nreturn msg;\n",
+        "outputs": 1,
+        "x": 840,
+        "y": 1560,
+        "wires": [
+            [
+                "ui_chart_severidad_alerta"
+            ]
+        ]
+    },
+    {
+        "id": "ui_chart_severidad_alerta",
+        "type": "ui_chart",
+        "z": "36527cff96e45198",
+        "name": "Frecuencia por Severidad",
+        "group": "c5d6eed71813cb94",
+        "order": 2,
+        "width": 6,
+        "height": 4,
+        "label": "Frecuencia por Severidad de Alerta",
+        "chartType": "bar",
+        "legend": "false",
+        "xformat": "auto",
+        "interpolate": "linear",
+        "nodata": "Esperando datos...",
+        "dot": false,
+        "ymin": "",
+        "ymax": "",
+        "removeOlder": 1,
+        "removeOlderPoints": "",
+        "removeOlderUnit": "3600",
+        "cutout": 0,
+        "useOneColor": false,
+        "useUTC": false,
+        "colors": [
+            "#ff9900",
+            "#ffcc00",
+            "#ffff66",
+            "#000000",
+            "#000000",
+            "#000000",
+            "#000000",
+            "#000000",
+            "#000000"
+        ],
+        "outputs": 1,
+        "useDifferentColor": false,
+        "className": "",
+        "x": 1130,
+        "y": 1520,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "698a16c97fba63a0",
+        "type": "function",
+        "z": "36527cff96e45198",
+        "name": "Procesar Actividad",
+        "func": "\n// Preparar sentencia SQL para SQLite\nmsg.topic = `SELECT tipo, COUNT(*) AS cantidad FROM registro_alertas GROUP BY tipo;`;\n\nreturn msg;\n",
+        "outputs": 1,
+        "timeout": "",
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 330,
+        "y": 1540,
+        "wires": [
+            [
+                "sqlite_tipo_alerta"
+            ]
+        ]
+    },
+    {
+        "id": "69628dc538714f5a",
+        "type": "function",
+        "z": "36527cff96e45198",
+        "name": "Procesar Actividad",
+        "func": "\n// Preparar sentencia SQL para SQLite\nmsg.topic = `SELECT severidad, COUNT(*) AS cantidad FROM registro_alertas GROUP BY severidad;`;\n\nreturn msg;\n",
+        "outputs": 1,
+        "timeout": "",
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 290,
+        "y": 1600,
+        "wires": [
+            [
+                "sqlite_severidad_alerta"
+            ]
+        ]
+    },
+    {
+        "id": "81053db70ed1fedb",
+        "type": "inject",
+        "z": "36527cff96e45198",
+        "name": "Actualizar Movimiento",
+        "props": [],
+        "repeat": "",
+        "crontab": "",
+        "once": true,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 180,
+        "y": 1700,
+        "wires": [
+            [
+                "968b81da8f965a1b"
+            ]
+        ]
+    },
+    {
+        "id": "35c5d4d383e41926",
+        "type": "sqlite",
+        "z": "36527cff96e45198",
+        "mydb": "db3fae6ebe4c50e5",
+        "sqlquery": "msg.topic",
+        "sql": "",
+        "name": "Contar Estados Movimiento",
+        "x": 660,
+        "y": 1820,
+        "wires": [
+            [
+                "a71954fabde08eb1"
+            ]
+        ]
+    },
+    {
+        "id": "a71954fabde08eb1",
+        "type": "function",
+        "z": "36527cff96e45198",
+        "name": "Formatear Estados Movimiento",
+        "func": "\nlet labels = [];\nlet values = [];\n\nmsg.payload.forEach(row => {\n    labels.push(row.estado);\n    values.push(row.cantidad);\n});\n\nmsg.payload = [\n    {\n        series: [\"Estados de Movimiento\"],\n        data: [values],\n        labels: labels\n    }\n];\n\nreturn msg;\n",
+        "outputs": 1,
+        "x": 870,
+        "y": 1740,
+        "wires": [
+            [
+                "a5973a1fab8e7b3d"
+            ]
+        ]
+    },
+    {
+        "id": "a5973a1fab8e7b3d",
+        "type": "ui_chart",
+        "z": "36527cff96e45198",
+        "name": "Frecuencia Movimiento",
+        "group": "a64141b3ecc3d567",
+        "order": 1,
+        "width": 7,
+        "height": 4,
+        "label": "Frecuencia de Estados de Movimiento",
+        "chartType": "bar",
+        "legend": "false",
+        "xformat": "auto",
+        "interpolate": "linear",
+        "nodata": "Esperando datos...",
+        "dot": false,
+        "ymin": "",
+        "ymax": "",
+        "removeOlder": 1,
+        "removeOlderPoints": "",
+        "removeOlderUnit": "3600",
+        "cutout": 0,
+        "useOneColor": false,
+        "useUTC": false,
+        "colors": [
+            "#33cc33",
+            "#66ff66",
+            "#99ff99",
+            "#000000",
+            "#000000",
+            "#000000",
+            "#000000",
+            "#000000",
+            "#000000"
+        ],
+        "outputs": 1,
+        "useDifferentColor": false,
+        "className": "",
+        "x": 1090,
+        "y": 1820,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "968b81da8f965a1b",
+        "type": "function",
+        "z": "36527cff96e45198",
+        "name": "Procesar Actividad",
+        "func": "\n// Preparar sentencia SQL para SQLite\nmsg.topic = `SELECT estado, COUNT(*) AS cantidad FROM registro_movimiento GROUP BY estado;`;\n\nreturn msg;\n",
+        "outputs": 1,
+        "timeout": "",
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 370,
+        "y": 1760,
+        "wires": [
+            [
+                "35c5d4d383e41926"
+            ]
+        ]
+    },
+    {
         "id": "f1e5f914bc295e56",
         "type": "mqtt-broker",
         "name": "",
@@ -859,6 +1187,28 @@
         "order": 4,
         "disp": true,
         "width": 14,
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "c5d6eed71813cb94",
+        "type": "ui_group",
+        "name": "Gráficas de alertas",
+        "tab": "ui_tab1",
+        "order": 7,
+        "disp": true,
+        "width": 13,
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "a64141b3ecc3d567",
+        "type": "ui_group",
+        "name": "Gráficas de Movimiento",
+        "tab": "ui_tab1",
+        "order": 6,
+        "disp": true,
+        "width": 7,
         "collapse": false,
         "className": ""
     },
