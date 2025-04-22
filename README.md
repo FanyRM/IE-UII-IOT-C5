@@ -78,3 +78,62 @@ FIRE‑ALARM es un sistema de alarma de incendios basado en ESP32 y Node‑RED. 
 
 ---
 
+# Diagramas de conexión
+
+| Nombre | Descripción | Diagrama  |
+|------|-----|------|
+| **Diagrama del circuito** | Diagrama de conexión de los sensores y actuadores, es se representan los que están dentro de la carcasa | ![circuit_image (4)](https://github.com/user-attachments/assets/c932c7ba-e8cb-4f68-8894-e918a90969a8) |
+| **Diagrama de la bomba** | Diagrama de conexión de la bomba de agua que se da tras la alarma | ![Imagen de WhatsApp 2025-04-21 a las 17 27 29_78030dbc](https://github.com/user-attachments/assets/601de88d-396b-4f49-a398-99b6cde42f73) |
+
+---
+
+# 🔥 Sistema de Monitoreo y Alerta de Incendios – Interfaz Gráfica
+
+Este sistema fue desarrollado utilizando **Node-RED** como plataforma principal para la creación de una interfaz gráfica interactiva y visualmente organizada, permitiendo el control, supervisión y análisis de los eventos del sistema.
+
+## 🧩 Funcionalidades de la Interfaz
+
+- ✅ **Activación manual de la alarma** desde el dashboard mediante un interruptor interactivo, accesible desde cualquier navegador.
+- 📊 **Gráfica de promedio de temperaturas** (ambiente y objeto) calculado con base en los últimos registros almacenados en SQLite.
+- 📈 **Promedio global de densidad** de humo/gas, con análisis visual del estado del aire registrado por los sensores.
+- 📊 **Frecuencia de estados de densidad**, diferenciando condiciones como `poco_adecuada`, `adecuada`, etc.
+- 🚶 **Gráfico de estados de movimiento**, permitiendo visualizar cuántas veces se ha detectado presencia.
+- 🚨 **Gráficas de alertas**:
+  - Por **tipo de alerta** (e.g., activación manual, detección de incendio).
+  - Por **severidad** (e.g., advertencia, peligrosa).
+- 📬 **Notificaciones automáticas por correo electrónico** a los encargados registrados, ante cada evento de emergencia.
+- 👥 **Formulario de registro de encargados**, con validación para evitar duplicados y almacenamiento de nombre, correo y fecha de registro.
+- 🧠 **Dashboard limpio y organizado por pestañas**, cada una dedicada a un componente específico del sistema (temperatura, densidad, movimiento, alertas).
+
+![image](https://github.com/user-attachments/assets/e66bcb33-c9c4-4c48-abaf-a70f408d92b9)
+![image](https://github.com/user-attachments/assets/41872908-8c09-411f-b045-539ec0a2e392)
+
+
+
+## 💾 Base de Datos
+
+Toda la información se almacena en una base de datos local SQLite (`firealarm.db`), organizada en tablas como:
+
+- `registro_temperaturas`
+- `registro_densidad`
+- `registro_movimiento`
+- `registro_alertas`
+- `encargados`
+
+## 🚀 Tecnologías Utilizadas
+
+- Node-RED
+- MQTT (Mosquitto)
+- SQLite
+- Gmail SMTP (para envío de correos)
+
+---
+
+Este sistema proporciona una solución completa para monitoreo ambiental, detección de incendios y alertas en tiempo real, ideal para entornos escolares, industriales o domésticos.
+
+---
+
+# Video de la funcionabilidad
+
+
+
