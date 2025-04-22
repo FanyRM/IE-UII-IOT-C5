@@ -79,7 +79,7 @@ FIRE‑ALARM es un sistema de alarma de incendios basado en ESP32 con MicroPytho
 
 ---
 
-# Diagramas de conexión
+# 🧩 Diagramas de conexión
 
 | Nombre | Descripción | Diagrama  |
 |------|-----|------|
@@ -128,7 +128,7 @@ Toda la información se almacena en una base de datos local SQLite (`firealarm.d
 - SQLite
 - Gmail SMTP (para envío de correos)
 
-### Imagen de envío de notificaciones
+### 📱 Imagen de envío de notificaciones
 ![image](https://github.com/user-attachments/assets/7d508350-8325-4b62-96d9-0f611118dc4c)
 
 
@@ -138,7 +138,7 @@ Este sistema proporciona una solución completa para monitoreo ambiental, detecc
 
 ---
 
-# Maqueta
+# 📺 Maqueta
 
 <div style="display: flex; flex-wrap: wrap; gap: 20px; justify-content: center; margin-top: 20px;">
   <img src="https://github.com/user-attachments/assets/7d505ff3-9e16-470a-bb86-faddab3d1532" alt="Imagen 1" style="width: 300px; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.2);">
@@ -148,7 +148,7 @@ Este sistema proporciona una solución completa para monitoreo ambiental, detecc
   <img src="https://github.com/user-attachments/assets/05cb48cc-2a69-450f-b30c-bd44501a77d4" alt="Imagen 5" style="width: 300px; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.2);">
 </div>
 
-## Diseño de la carcasa
+## ✍️ Diseño de la carcasa
 La carcasa fue realizada en un programa en linea de nombre Tinkercad, es perfecta para actividades escolares, el equipo se encargo de diseñar el prototipo el cual fue impreso a 3D por un proveedor de confianza externo.
 
 ![image](https://github.com/user-attachments/assets/64601636-3de5-4a46-bd65-44590fecef66)
@@ -156,7 +156,7 @@ La carcasa fue realizada en un programa en linea de nombre Tinkercad, es perfect
 
 
 ---
-# Videos del proyecto
+# 🎥 Videos del proyecto
 A contnuación se presentan los videos del proyecto, dar click en la imagen para ir al video
 
 ## Video de la funcionabilidad
@@ -167,7 +167,7 @@ A contnuación se presentan los videos del proyecto, dar click en la imagen para
 [![image](https://github.com/user-attachments/assets/8bfed49d-2f4f-4290-b84a-a76143d1dc4c)](https://drive.google.com/file/d/1AdxZuFHb9nrFqfi02US544rWiDThBX13/view?usp=sharing)
 
 ---
-# Documentos del proyecto
+# 📋 Documentos del proyecto
 
 ## JSON Node-Red
 #### [Node Red de registro de sensores](https://github.com/FanyRM/IE-UII-IOT-C5/blob/main/Unidad%20III/node-red_SensoresDB.json)
