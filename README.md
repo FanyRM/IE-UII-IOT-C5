@@ -135,5 +135,6 @@ Este sistema proporciona una solución completa para monitoreo ambiental, detecc
 
 # Video de la funcionabilidad
 
+![image](https://github.com/user-attachments/assets/3ca707f7-db00-4779-b7cd-35b3d635e6b6)
 
 
