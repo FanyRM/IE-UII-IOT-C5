@@ -1,0 +1,319 @@
+[
+    {
+        "id": "7d73c28a23a4cc6f",
+        "type": "tab",
+        "label": "Registro de Encargados",
+        "disabled": false,
+        "info": ""
+    },
+    {
+        "id": "e4e4af421b201c41",
+        "type": "ui_form",
+        "z": "7d73c28a23a4cc6f",
+        "name": "Formulario Registro",
+        "label": "Registrar nuevo encargado",
+        "group": "ui_group1",
+        "order": 1,
+        "width": 10,
+        "height": 1,
+        "options": [
+            {
+                "label": "Nombre",
+                "value": "nombre",
+                "type": "text",
+                "required": true
+            },
+            {
+                "label": "Correo",
+                "value": "correo",
+                "type": "text",
+                "required": true
+            }
+        ],
+        "formValue": {
+            "nombre": "",
+            "correo": ""
+        },
+        "payload": "",
+        "submit": "Registrar",
+        "cancel": "Cancelar",
+        "topic": "",
+        "x": 160,
+        "y": 100,
+        "wires": [
+            [
+                "b7a164f06a741c18"
+            ]
+        ]
+    },
+    {
+        "id": "b7a164f06a741c18",
+        "type": "function",
+        "z": "7d73c28a23a4cc6f",
+        "name": "Verificar si existe",
+        "func": "\nlet correo = msg.payload.correo;\nmsg.topic = `SELECT COUNT(*) as total FROM encargados WHERE correo = '${correo}';`;\nmsg.originalPayload = msg.payload;\nreturn msg;\n",
+        "outputs": 1,
+        "x": 400,
+        "y": 100,
+        "wires": [
+            [
+                "053d3cfaaf411a21"
+            ]
+        ]
+    },
+    {
+        "id": "053d3cfaaf411a21",
+        "type": "sqlite",
+        "z": "7d73c28a23a4cc6f",
+        "mydb": "db3fae6ebe4c50e5",
+        "sql": "",
+        "name": "Consultar SQLite",
+        "x": 210,
+        "y": 180,
+        "wires": [
+            [
+                "169c53753b285f5f"
+            ]
+        ]
+    },
+    {
+        "id": "169c53753b285f5f",
+        "type": "function",
+        "z": "7d73c28a23a4cc6f",
+        "name": "Evaluar resultado",
+        "func": "\nlet total = msg.payload[0].total;\nif (total > 0) {\n    msg.payload = \"Ya existe un usuario con ese correo.\";\n} else {\n    let data = msg.originalPayload;\n    msg.topic = `INSERT INTO encargados (nombre, correo) VALUES ('${data.nombre}', '${data.correo}');`;\n}\nreturn msg;\n",
+        "outputs": 1,
+        "x": 510,
+        "y": 180,
+        "wires": [
+            [
+                "4fbeae38ba35d6fe"
+            ]
+        ]
+    },
+    {
+        "id": "4fbeae38ba35d6fe",
+        "type": "sqlite",
+        "z": "7d73c28a23a4cc6f",
+        "mydb": "db3fae6ebe4c50e5",
+        "sql": "",
+        "name": "Insertar en SQLite",
+        "x": 690,
+        "y": 100,
+        "wires": [
+            [
+                "dc4ec23f9f247b8a",
+                "984897498257be69"
+            ]
+        ]
+    },
+    {
+        "id": "dc4ec23f9f247b8a",
+        "type": "ui_text",
+        "z": "7d73c28a23a4cc6f",
+        "group": "ui_group1",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "name": "Respuesta",
+        "label": "",
+        "format": "{{msg.payload}}",
+        "layout": "row-spread",
+        "x": 890,
+        "y": 160,
+        "wires": []
+    },
+    {
+        "id": "5d79e66e3ba979b7",
+        "type": "inject",
+        "z": "7d73c28a23a4cc6f",
+        "name": "Actualizar Tabla",
+        "props": [],
+        "repeat": "",
+        "crontab": "",
+        "once": true,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 260,
+        "y": 260,
+        "wires": [
+            [
+                "984897498257be69"
+            ]
+        ]
+    },
+    {
+        "id": "984897498257be69",
+        "type": "function",
+        "z": "7d73c28a23a4cc6f",
+        "name": "Query encargados",
+        "func": "msg.topic = \"SELECT nombre, correo, fecha_registro FROM encargados ORDER BY id DESC;\";\nreturn msg;",
+        "outputs": 1,
+        "x": 690,
+        "y": 260,
+        "wires": [
+            [
+                "732580f3f0cbbe16"
+            ]
+        ]
+    },
+    {
+        "id": "732580f3f0cbbe16",
+        "type": "sqlite",
+        "z": "7d73c28a23a4cc6f",
+        "mydb": "db3fae6ebe4c50e5",
+        "sql": "",
+        "name": "Obtener encargados",
+        "x": 600,
+        "y": 340,
+        "wires": [
+            [
+                "e318f2d457bc6bcf"
+            ]
+        ]
+    },
+    {
+        "id": "e318f2d457bc6bcf",
+        "type": "ui_table",
+        "z": "7d73c28a23a4cc6f",
+        "group": "ad917e1f81fb23dd",
+        "name": "Tabla Encargados",
+        "order": 1,
+        "width": 10,
+        "height": 7,
+        "columns": [],
+        "outputs": 1,
+        "cts": true,
+        "x": 750,
+        "y": 420,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "ui_switch_alarma",
+        "type": "ui_switch",
+        "z": "7d73c28a23a4cc6f",
+        "name": "Activar Alarma",
+        "label": "Activar Alarma",
+        "tooltip": "",
+        "group": "f472e80942ee533c",
+        "order": 1,
+        "width": 10,
+        "height": 1,
+        "passthru": true,
+        "decouple": "false",
+        "topic": "",
+        "topicType": "str",
+        "style": "",
+        "onvalue": "1",
+        "onvalueType": "str",
+        "onicon": "",
+        "oncolor": "",
+        "offvalue": "0",
+        "offvalueType": "str",
+        "officon": "",
+        "offcolor": "",
+        "animate": false,
+        "className": "",
+        "x": 300,
+        "y": 420,
+        "wires": [
+            [
+                "mqtt_out_alarma"
+            ]
+        ]
+    },
+    {
+        "id": "mqtt_out_alarma",
+        "type": "mqtt out",
+        "z": "7d73c28a23a4cc6f",
+        "name": "Publicar Alarma",
+        "topic": "firealarm/emergencia",
+        "qos": "",
+        "retain": "",
+        "broker": "f1e5f914bc295e56",
+        "x": 540,
+        "y": 440,
+        "wires": []
+    },
+    {
+        "id": "ui_group1",
+        "type": "ui_group",
+        "name": "Registro de Encargados",
+        "tab": "ui_tab1",
+        "order": 1,
+        "disp": true,
+        "width": 10,
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "db3fae6ebe4c50e5",
+        "type": "sqlitedb",
+        "db": "C:\\SQLiteTools\\firealarm.db",
+        "mode": "RWC"
+    },
+    {
+        "id": "ad917e1f81fb23dd",
+        "type": "ui_group",
+        "name": "Tabla de encargados",
+        "tab": "ui_tab1",
+        "order": 2,
+        "disp": true,
+        "width": 10,
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "f472e80942ee533c",
+        "type": "ui_group",
+        "name": "Control de alarma",
+        "tab": "ui_tab1",
+        "order": 3,
+        "disp": true,
+        "width": 10,
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "f1e5f914bc295e56",
+        "type": "mqtt-broker",
+        "name": "",
+        "broker": "broker.emqx.io",
+        "port": 1883,
+        "clientid": "",
+        "autoConnect": true,
+        "usetls": false,
+        "protocolVersion": 4,
+        "keepalive": 60,
+        "cleansession": true,
+        "autoUnsubscribe": true,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthRetain": "false",
+        "birthPayload": "",
+        "birthMsg": {},
+        "closeTopic": "",
+        "closeQos": "0",
+        "closeRetain": "false",
+        "closePayload": "",
+        "closeMsg": {},
+        "willTopic": "",
+        "willQos": "0",
+        "willRetain": "false",
+        "willPayload": "",
+        "willMsg": {},
+        "userProps": "",
+        "sessionExpiry": ""
+    },
+    {
+        "id": "ui_tab1",
+        "type": "ui_tab",
+        "name": "Sistema Alarma",
+        "icon": "dashboard",
+        "order": 1
+    }
+]
