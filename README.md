@@ -133,8 +133,24 @@ Este sistema proporciona una solución completa para monitoreo ambiental, detecc
 
 ---
 
+# Maqueta
+
+<div style="display: flex; flex-wrap: wrap; gap: 20px; justify-content: center; margin-top: 20px;">
+  <img src="https://github.com/user-attachments/assets/7d505ff3-9e16-470a-bb86-faddab3d1532" alt="Imagen 1" style="width: 300px; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.2);">
+  <img src="https://github.com/user-attachments/assets/da116f79-937b-4a77-8cff-37e90eb1c50b" alt="Imagen 2" style="width: 300px; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.2);">
+  <img src="https://github.com/user-attachments/assets/756e7b6f-a221-455a-8090-4218a800d2ac" alt="Imagen 3" style="width: 300px; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.2);">
+  <img src="https://github.com/user-attachments/assets/4cde064e-3436-43a3-b263-00c6fd8b98bb" alt="Imagen 4" style="width: 300px; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.2);">
+  <img src="https://github.com/user-attachments/assets/05cb48cc-2a69-450f-b30c-bd44501a77d4" alt="Imagen 5" style="width: 300px; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.2);">
+</div>
+
+
+
+
+---
+
 # Video de la funcionabilidad
 
-![image](https://github.com/user-attachments/assets/3ca707f7-db00-4779-b7cd-35b3d635e6b6)
+[![image](https://github.com/user-attachments/assets/3ca707f7-db00-4779-b7cd-35b3d635e6b6)](https://drive.google.com/file/d/1E8TFkUbgDljMAK_oajpsV0WBSZ2qgFWr/view?usp=drive_link)
+
 
 
