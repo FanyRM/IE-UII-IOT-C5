@@ -167,23 +167,40 @@ A contnuación se presentan los videos del proyecto, dar click en la imagen para
 [![image](https://github.com/user-attachments/assets/8bfed49d-2f4f-4290-b84a-a76143d1dc4c)](https://drive.google.com/file/d/1AdxZuFHb9nrFqfi02US544rWiDThBX13/view?usp=sharing)
 
 ---
-# 📋 Documentos del proyecto
+# 📋 Documentos del Proyecto
 
-## JSON Node-Red
-#### [Node Red de registro de sensores](https://github.com/FanyRM/IE-UII-IOT-C5/blob/main/Unidad%20III/node-red_SensoresDB.json)
-#### [Node Red del registro de encargados](https://github.com/FanyRM/IE-UII-IOT-C5/blob/main/Unidad%20III/node-red_Registros.json)
+<details>
+<summary>🧩 JSONs de Node-RED</summary>
 
-## Códigos ESP32
-#### [Comando main ESP32 de actuadores](https://github.com/FanyRM/IE-UII-IOT-C5/blob/main/Unidad%20III/main%20de%20los%20actuadores.py)
-#### [Comando main ESP32 de sensores](https://github.com/FanyRM/IE-UII-IOT-C5/blob/main/Unidad%20III/main%20de%20los%20sensores.py)
-#### [Comando main ESP32 de bomba de agua](https://github.com/FanyRM/IE-UII-IOT-C5/blob/main/Unidad%20III/main%20motor.py)
-#### [Libreria para sensor MLX90614](https://github.com/FanyRM/IE-UII-IOT-C5/blob/main/Unidad%20III/mlx90614.py)
+- [Registro de sensores](https://github.com/FanyRM/IE-UII-IOT-C5/blob/main/Unidad%20III/node-red_SensoresDB.json)
+- [Registro de encargados](https://github.com/FanyRM/IE-UII-IOT-C5/blob/main/Unidad%20III/node-red_Registros.json)
 
-## Base de datos
-#### [Tablas de base de datos SQLite](https://github.com/FanyRM/IE-UII-IOT-C5/blob/main/Unidad%20III/SCRIPT%20para%20Postgres.txt)
+</details>
 
-## Documentos de cliente
-#### []()
+<details>
+<summary>🔌 Códigos ESP32</summary>
+
+- [Main actuadores](https://github.com/FanyRM/IE-UII-IOT-C5/blob/main/Unidad%20III/main%20de%20los%20actuadores.py)
+- [Main sensores](https://github.com/FanyRM/IE-UII-IOT-C5/blob/main/Unidad%20III/main%20de%20los%20sensores.py)
+- [Main bomba de agua](https://github.com/FanyRM/IE-UII-IOT-C5/blob/main/Unidad%20III/main%20motor.py)
+- [Librería sensor MLX90614](https://github.com/FanyRM/IE-UII-IOT-C5/blob/main/Unidad%20III/mlx90614.py)
+
+</details>
+
+<details>
+<summary>📊 Base de Datos</summary>
+
+- [Tablas SQLite](https://github.com/FanyRM/IE-UII-IOT-C5/blob/main/Unidad%20III/SCRIPT%20para%20Postgres.txt)
+
+</details>
+
+<details>
+<summary>📄 Documentos del Cliente</summary>
+
+- *(En construcción...)*
+
+</details>
+
 
 
 
