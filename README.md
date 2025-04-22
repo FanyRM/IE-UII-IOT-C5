@@ -18,8 +18,8 @@
 
 | Aspecto       | Comentario                                                                                                                                       |
 |---------------|--------------------------------------------------------------------------------------------------------------------------------------------------|
-| **Positivo**  | Siempre dispuesto a ayudar; amable y cooperativo incluso en compras de material; excelente compañero, comprensivo y paciente.                     |
-| **Negativo**  | Debe practicar más su programación y dejar de subestimarse.                                                                                      |
+| **Positivo**  | Es una persona siempre dispuesto a ayudar incluso si es que desconoce de un tema, es proactivo y le gusta colaborar, es bueno trabajando en equipo. Es paciente y ofrece apoyo moral, siempre busca una manera más fácil de lograr nuestros objetivos y es bueno resolviendo en situaciones de estrés.  |
+| **Negativo**  | Debe practicar más su programación y dejar de subestimarse, es una persona con excelentes habiliades que se ve muchas veces limitado por si mismo, debe esforzarse un poco más en la parte técnica. |
 | **A mejorar** | Comunicación y habilidades técnicas.                                                                                                            |
 
 ### Celeste E. Ramírez Matehuala
@@ -35,7 +35,7 @@
 # 🚒 FIRE‑ALARM: Sistema de Alarma de Incendios
 
 ## 📖 Descripción General
-FIRE‑ALARM es un sistema de alarma de incendios basado en ESP32 y Node‑RED. Detecta humo y temperatura elevada, emite alertas sonoras y visuales, registra eventos en SQLite y ofrece monitoreo remoto vía interfaz web.
+FIRE‑ALARM es un sistema de alarma de incendios basado en ESP32 con MicroPython y Node‑RED. Detecta humo y temperatura elevada mediante sensores, emite alertas sonoras y visuales, registra eventos en una base de datos SQLite y ofrece monitoreo remoto vía interfaz web. Pretende ser un sistema que se pueda emplear en áreas con riesgo de incendio, en el caso de la evaluación del proyecto con un posible cliente, es en una panadería.
 
 ## 🎯 Objetivos
 - Detectar humo y temperatura anómala.  
@@ -64,7 +64,7 @@ FIRE‑ALARM es un sistema de alarma de incendios basado en ESP32 y Node‑RED. 
 | **Buzzer Pasivo** | Genera sonido de alarma (×2 unidades)            | \$60.00  | <img src="https://github.com/user-attachments/assets/a5794c70-3558-4381-9c8e-f1f7f7208288" width="150" height="150" alt="Buzzer"/>  |
 | **Tira LED**      | Indica estado con color                          | \$20.00  | <img src="https://github.com/user-attachments/assets/f4dc5553-1a82-49e0-9a13-11296590232d" width="150" height="150" alt="Tira LED"/> |
 | **LED**           | Señalización visual (×3 unidades)                | \$10.00  | <img src="https://github.com/user-attachments/assets/517844dc-1c3c-4004-a811-e6621f91916d" width="150" height="150" alt="LED"/>     |
-| **Carcasa 3D**    | Estructura física del sistema                    | \$180.00 |                                                                                                                                     |
+| **Carcasa 3D**    | Estructura física del sistema                    | \$180.00 |                                                                                        |
 
 ---
 
@@ -106,7 +106,7 @@ Este sistema fue desarrollado utilizando **Node-RED** como plataforma principal 
 - 🧠 **Dashboard limpio y organizado por pestañas**, cada una dedicada a un componente específico del sistema (temperatura, densidad, movimiento, alertas).
 
 ![image](https://github.com/user-attachments/assets/e66bcb33-c9c4-4c48-abaf-a70f408d92b9)
-![image](https://github.com/user-attachments/assets/41872908-8c09-411f-b045-539ec0a2e392)
+![image](https://github.com/user-attachments/assets/07ea9c2a-412d-41de-8d4b-7047cd169b9b)
 
 
 
@@ -127,6 +127,10 @@ Toda la información se almacena en una base de datos local SQLite (`firealarm.d
 - SQLite
 - Gmail SMTP (para envío de correos)
 
+### Imagen de envío de notificaciones
+![image](https://github.com/user-attachments/assets/7d508350-8325-4b62-96d9-0f611118dc4c)
+
+
 ---
 
 Este sistema proporciona una solución completa para monitoreo ambiental, detección de incendios y alertas en tiempo real, ideal para entornos escolares, industriales o domésticos.
@@ -143,14 +147,24 @@ Este sistema proporciona una solución completa para monitoreo ambiental, detecc
   <img src="https://github.com/user-attachments/assets/05cb48cc-2a69-450f-b30c-bd44501a77d4" alt="Imagen 5" style="width: 300px; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.2);">
 </div>
 
+## Diseño de la carcasa
+La carcasa fue realizada en un programa en linea de nombre Tinkercad, es perfecta para actividades escolares, el equipo se encargo de diseñar el prototipo el cual fue impreso a 3D por un proveedor de confianza externo.
+
+![image](https://github.com/user-attachments/assets/64601636-3de5-4a46-bd65-44590fecef66)
 
 
 
 ---
+# Videos del proyecto
+A contnuación se presentan los videos del proyecto, dar click en la imagen para ir al video
 
-# Video de la funcionabilidad
+## Video de la funcionabilidad
 
 [![image](https://github.com/user-attachments/assets/3ca707f7-db00-4779-b7cd-35b3d635e6b6)](https://drive.google.com/file/d/1E8TFkUbgDljMAK_oajpsV0WBSZ2qgFWr/view?usp=drive_link)
+
+## Video de posible cliente
+[![image](https://github.com/user-attachments/assets/8bfed49d-2f4f-4290-b84a-a76143d1dc4c)](https://drive.google.com/file/d/1AdxZuFHb9nrFqfi02US544rWiDThBX13/view?usp=sharing)
+
 
 
 
