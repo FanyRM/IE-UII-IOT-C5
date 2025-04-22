@@ -152,7 +152,7 @@ Este sistema proporciona una solución completa para monitoreo ambiental, detecc
 La carcasa fue realizada en un programa en linea de nombre Tinkercad, es perfecta para actividades escolares, el equipo se encargo de diseñar el prototipo el cual fue impreso a 3D por un proveedor de confianza externo.
 
 ![image](https://github.com/user-attachments/assets/64601636-3de5-4a46-bd65-44590fecef66)
-
+#### [Ver maqueta en archivo .stl](https://github.com/FanyRM/IE-UII-IOT-C5/blob/main/Unidad%20III/Fire%20Alarm%20Carcasa.stl)
 
 
 ---
@@ -166,6 +166,24 @@ A contnuación se presentan los videos del proyecto, dar click en la imagen para
 ## Video de posible cliente
 [![image](https://github.com/user-attachments/assets/8bfed49d-2f4f-4290-b84a-a76143d1dc4c)](https://drive.google.com/file/d/1AdxZuFHb9nrFqfi02US544rWiDThBX13/view?usp=sharing)
 
+---
+# Documentos del proyecto
+
+## JSON Node-Red
+#### [Node Red de registro de sensores](https://github.com/FanyRM/IE-UII-IOT-C5/blob/main/Unidad%20III/node-red_SensoresDB.json)
+#### [Node Red del registro de encargados](https://github.com/FanyRM/IE-UII-IOT-C5/blob/main/Unidad%20III/node-red_Registros.json)
+
+## Códigos ESP32
+#### [Comando main ESP32 de actuadores](https://github.com/FanyRM/IE-UII-IOT-C5/blob/main/Unidad%20III/main%20de%20los%20actuadores.py)
+#### [Comando main ESP32 de sensores](https://github.com/FanyRM/IE-UII-IOT-C5/blob/main/Unidad%20III/main%20de%20los%20sensores.py)
+#### [Comando main ESP32 de bomba de agua](https://github.com/FanyRM/IE-UII-IOT-C5/blob/main/Unidad%20III/main%20motor.py)
+#### [Libreria para sensor MLX90614](https://github.com/FanyRM/IE-UII-IOT-C5/blob/main/Unidad%20III/mlx90614.py)
+
+## Base de datos
+#### [Tablas de base de datos SQLite](https://github.com/FanyRM/IE-UII-IOT-C5/blob/main/Unidad%20III/SCRIPT%20para%20Postgres.txt)
+
+## Documentos de cliente
+#### []()
 
 
 
