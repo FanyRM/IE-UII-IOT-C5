@@ -150,9 +150,10 @@ Este sistema proporciona una solución completa para monitoreo ambiental, detecc
 
 ## ✍️ Diseño de la carcasa
 La carcasa fue realizada en un programa en linea de nombre Tinkercad, es perfecta para actividades escolares, el equipo se encargo de diseñar el prototipo el cual fue impreso a 3D por un proveedor de confianza externo.
+#### [Ver maqueta en archivo .stl](https://github.com/FanyRM/IE-UII-IOT-C5/blob/main/Unidad%20III/Fire%20Alarm%20Carcasa.stl)
 
 ![image](https://github.com/user-attachments/assets/64601636-3de5-4a46-bd65-44590fecef66)
-#### [Ver maqueta en archivo .stl](https://github.com/FanyRM/IE-UII-IOT-C5/blob/main/Unidad%20III/Fire%20Alarm%20Carcasa.stl)
+
 
 
 ---
@@ -201,6 +202,13 @@ A contnuación se presentan los videos del proyecto, dar click en la imagen para
 
 </details>
 
+---
 
+# 🎓 Conclusión
+El desarrollo de este proyecto ha representado una experiencia integral que trasciende la teoría para consolidarse como una aplicación real de los conocimientos adquiridos en nuestra formación profesional. Al trabajar con tecnologías como Node-RED, ESP32, MQTT y bases de datos en SQLite, no solo fortalecimos nuestras habilidades técnicas, sino también nuestra capacidad de análisis, resolución de problemas y trabajo en equipo.
+
+Implementar un sistema funcional de monitoreo y alerta contra incendios nos permitió comprender la importancia de la automatización y la conectividad en contextos reales, donde la prevención puede marcar una diferencia significativa. Asimismo, el enfoque en la experiencia de usuario, la visualización de datos y la integración de notificaciones reflejan una visión más completa del desarrollo de soluciones tecnológicas.
+
+Sin duda, este tipo de proyectos nos prepara para enfrentar los retos del campo laboral con una perspectiva crítica, práctica y creativa, orientada a ofrecer respuestas funcionales e innovadoras a las necesidades de la sociedad.
 
 
